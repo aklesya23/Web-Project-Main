@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace|Universal Market </title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="Marketplace">
+    <header>
+        <nav>
+            <a href="#" onclick="window.location.href='index.html'" class="navbar-brand">
+                <img src="../Assets/universal_market_logo.png" alt="Universal Market Logo" class="navbar-logo">
+                <span>Universal Market</span>
+            </a>            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Marketplace.html">Marketplace</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero bg-primary text-light">
+        <h1>Marketplace</h1>
+        <p>From homes and cars to everyday essentials — search, discover, and secure what you need</p>
+    </section>
+    <!-- Wrapped aside and main-body in a flex container -->
+    <div class="main-content">
+        <section class="Aside">
+            <!-- Moved search section above categories -->
+            <div class="search-section">
+                <h3>Search Products</h3>
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+                    <!-- Made search button look like other filter buttons -->
+                    <button onclick="performSearch()" class="search-btn">Search</button>
+                </div>
+            </div>
+            
+            <div class="Categories">
+                <h3>Categories</h3>
+                <!-- Updated to show dynamic count and styled buttons -->
+                <div class="filter-controls">
+                    <span id="selectedCount">0 selected</span>
+                    <button onclick="selectAllFilters()" class="filter-btn">Select All</button> 
+                    <button onclick="clearAllFilters()" class="filter-btn">Clear All</button>
+                </div>
+                <!-- Added proper gap between checkboxes and text labels -->
+                <div class="check-list">
+                    <label for="electronics"><input type="checkbox" id="electronics">Electronics</label>
+                    <label for="clothing"><input type="checkbox" id="clothing">Clothing</label>
+                    <label for="real-estate"><input type="checkbox" id="real-estate">Real Estate</label>
+                    <label for="vehicles"><input type="checkbox" id="vehicles">Vehicles</label>
+                    <label for="home-goods"><input type="checkbox" id="home-goods">Home Goods</label>
+                    <label for="cosmetics"><input type="checkbox" id="cosmetics">Cosmetics</label>
+                </div>
+            </div>
+            <div>
+                <h3>Price Range</h3>
+                <!-- Added proper gap between checkboxes and text labels -->
+                <div class="check-list">
+                    <label for="price-500"><input type="checkbox" id="price-500">>500ETB</label>
+                    <label for="price-500-1500"><input type="checkbox" id="price-500-1500">500-1500</label>
+                    <label for="price-1500-2500"><input type="checkbox" id="price-1500-2500">1500-2500</label>
+                    <label for="price-2500-5000"><input type="checkbox" id="price-2500-5000">2500-5000</label>
+                    <label for="price-5000-10000"><input type="checkbox" id="price-5000-10000">5000-10000</label>
+                    <label for="price-10000"><input type="checkbox" id="price-10000">>10000</label>
+                </div>
+            </div>
+            <!-- Added filter button to apply selected filters -->
+            <button onclick="applyFilters()" class="filter-apply-btn">Apply Filters</button>
+        </section>
+        <section class="main-body">
+            <!-- Added loading state and better structure for product cards -->
+            <div class="products-header">
+                <h2>Products</h2>
+                <div class="products-count">
+                    <span id="productsCount">Loading...</span>
+                </div>
+            </div>
+            <div class="cards" id="productsContainer">
+                <!-- Products will be dynamically loaded here -->
+                <div class="loading-spinner">
+                    <p>Loading products...</p>
+                </div>
+            </div>
+            
+            <!-- Made sample products display side by side in a grid -->
+           <!-- <div class="sample-products">
+                <div class="sample-product">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Sample Product 1">
+                    <h3>Sample Product 1</h3>
+                    <p class="category">Electronics</p>
+                    <p class="price">299.99 ETB</p>
+                    <p class="description">High-quality electronic device with advanced features</p>
+                    <button>Add to cart</button>
+                </div>
+                <div class="sample-product">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Sample Product 2">
+                    <h3>Sample Product 2</h3>
+                    <p class="category">Clothing</p>
+                    <p class="price">49.99 ETB</p>
+                    <p class="description">Comfortable and stylish clothing item</p>
+                    <button>Add to cart</button>
+                </div>
+                <div class="sample-product">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Sample Product 3">
+                    <h3>Sample Product 3</h3>
+                    <p class="category">Home Goods</p>
+                    <p class="price">79.99 ETB</p>
+                    <p class="description">Essential home item for everyday use</p>
+                    <button>Add to cart</button>
+                </div>
+                <div class="sample-product">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Sample Product 4">
+                    <h3>Sample Product 4</h3>
+                    <p class="category">Vehicles</p>
+                    <p class="price">15,999.99 ETB</p>
+                    <p class="description">Reliable vehicle in excellent condition</p>
+                    <button>Add to cart</button>
+                </div>
+                <div class="sample-product">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Sample Product 5">
+                    <h3>Sample Product 5</h3>
+                    <p class="category">Cosmetics</p>
+                    <p class="price">24.99 ETB</p>
+                    <p class="description">Premium beauty product for daily use</p>
+                    <button>Add to cart</button>
+                </div>
+                <div class="sample-product">
+                    <img src="/placeholder.svg?height=200&width=200" alt="Sample Product 6">
+                    <h3>Sample Product 6</h3>
+                    <p class="category">Real Estate</p>
+                    <p class="price">250,000.00 ETB</p>
+                    <p class="description">Beautiful property in prime location</p>
+                    <button>Add to cart</button>
+                </div>
+            </div>
+        -->
+        </section>
+    </div>
+    <footer>
+        <div class="link-container">
+            <div>
+                <h3>Universal Market</h3>
+                <p>Your one-stop shop for everything from cars to everyday essentials.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="Marketplace.html">Marketplace</a>
+                <a href="cart.html">Cart</a>
+                <a href="Login.html">Login</a>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Email: support@universalmarket.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <p>© 2025 Universal Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+</html>

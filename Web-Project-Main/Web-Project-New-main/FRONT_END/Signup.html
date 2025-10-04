@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up | Universal Market</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="Sign-Up">
+    <header>
+        <nav>
+            <a href="#" onclick="window.location.href='index.html'" class="navbar-brand">
+                <img src="../Assets/universal_market_logo.png" alt="Universal Market Logo" class="navbar-logo">
+                <span>Universal Market</span>
+            </a>            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Marketplace.html">Marketplace</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Updated signup container to match login page layout and styling -->
+    <div class="signup-container">
+        <div class="signup-box">
+            <h1 class="signup-title">Sign Up</h1>
+            <p class="signup-subtitle">Create an account to start shopping</p>
+            <form action="" method="POST" novalidate class="signup-form">
+                <div class="signup-form-group">
+                    <input type="text" required placeholder="Full Name" id="signupName" class="signup-input">
+                    <small class="error" aria-live="polite"></small>
+                </div>
+                <div class="signup-form-group">
+                    <input type="text" required placeholder="Email Address" id="signupEmail" class="signup-input">
+                    <small class="error" aria-live="polite"></small>
+                </div>
+                <div class="signup-form-group">
+                    <input type="text" required placeholder="Phone Number" id="signupPhone" class="signup-input">
+                    <small class="error" aria-live="polite"></small>
+                </div>
+                <div class="signup-form-group signup-password-group">
+                    <input type="password" id="signupPassword" required placeholder="Password" class="signup-input signup-password-input">
+                    <i id="toggleSignupPassword" class="bx bx-hide signup-password-toggle" title="Show password"></i>
+                    <small class="error" aria-live="polite"></small>
+                </div>
+                <div class="signup-form-group signup-password-group">
+                    <input type="password" id="signupConfirmPassword" required placeholder="Confirm Password" class="signup-input signup-password-input">
+                    <i id="toggleSignupConfirmPassword" class="bx bx-hide signup-password-toggle" title="Show password"></i>
+                    <small class="error" aria-live="polite"></small>
+                </div>
+                <button type="submit" class="signup-button">Create Account</button>
+            </form>
+            <p class="signup-footer-text">Already have an account? <a href="Login.html" class="signup-link">Login here</a></p>
+        </div>
+    </div>
+    <footer>
+        <div class="link-container">
+            <div>
+                <h3>Universal Market</h3>
+                <p>Your one-stop shop for everything from cars to everyday essentials.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="Marketplace.html">Marketplace</a>
+                <a href="Sell.html">Sell</a>
+                <a href="cart.html">Cart</a>
+                <a href="Login.html">Login</a>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Email: support@universalmarket.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <p>© 2025 Universal Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+</html>

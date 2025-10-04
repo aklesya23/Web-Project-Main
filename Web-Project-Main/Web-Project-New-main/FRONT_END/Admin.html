@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Universal Market</title>
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>🛠️ Admin Panel</h1>
+            <p>Manage your products and inventory</p>
+            <div style="margin-top: 15px;">
+                <button class="btn btn-success" onclick="openSellPage()" style="margin-right: 10px;">
+                    ➕ Post New Item
+                </button>
+                <button class="btn btn-danger" onclick="handleLogout()">
+                    🚪 Logout
+                </button>
+            </div>
+        </div>
+
+        <div id="alertContainer"></div>
+
+        <div class="search-section">
+            <h2 style="margin-top: 0; margin-bottom: 20px;">🔍 Search Products</h2>
+            <div class="search-controls">
+                <div class="search-group">
+                    <label for="searchInput">Search by Name</label>
+                    <input type="text" id="searchInput" placeholder="Enter product name...">
+                </div>
+                <div class="search-group">
+                    <label for="categoryFilter">Filter by Category</label>
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="searchProducts()">Search</button>
+                <button class="btn btn-secondary" onclick="resetSearch()">Reset</button>
+            </div>
+        </div>
+
+        <div class="edit-form-section" id="editFormSection">
+            <h2 style="margin-top: 0;">✏️ Edit Product</h2>
+            <form id="editForm">
+                <input type="hidden" id="editProductId">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="editName">Product Name *</label>
+                        <input type="text" id="editName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editCategory">Category *</label>
+                        <select id="editCategory" required>
+                            <option value="">Select Category</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPrice">Price (ETB) *</label>
+                        <input type="number" id="editPrice" step="0.01" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editStock">Stock Quantity *</label>
+                        <input type="number" id="editStock" min="0" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editImageUrl">Image URL</label>
+                        <input type="url" id="editImageUrl">
+                    </div>
+                    <div class="form-group">
+                        <label for="editStatus">Status</label>
+                        <select id="editStatus">
+                            <option value="true">Active</option>
+                            <option value="false">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="editDescription">Description</label>
+                    <textarea id="editDescription"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="cancelEdit()">Cancel</button>
+                    <button type="submit" class="btn btn-success">Save Changes</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="products-table-section">
+            <div class="table-header">
+                <h2>📦 Products</h2>
+                <span id="productCount" style="color: #6c757d; font-size: 14px;"></span>
+            </div>
+            <div id="tableContainer">
+                <div class="loading">Loading products...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

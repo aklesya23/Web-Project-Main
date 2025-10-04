@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Marketplace</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="data:,">
+    <style>
+        #heroLogoutBtn:hover {
+            background-color: rgba(255,255,255,0.3) !important;
+            border-color: rgba(255,255,255,0.5) !important;
+            transform: translateY(-2px);
+        }
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body class="Home">
+    <header>
+        <nav>
+            <a href="#" onclick="window.location.href='index.html'" class="navbar-brand">
+                <img src="../Assets/universal_market_logo.png" alt="Universal Market Logo" class="navbar-logo">
+                <span>Universal Market</span>
+            </a>            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Marketplace.html">Marketplace</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="Login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero bg-primary text-white">
+       <div>
+            <h1>Everything you need, All in one place.</h1>
+            <p>From cars and houses to everyday essentials - discover millions of products with unbeatable prices!</p>
+            <div class="hero-buttons">
+                <a href="Marketplace.html"><button>Start Shopping</button></a>
+                <button id="heroLogoutBtn" onclick="handleSignOut()" style="display: flex; margin-left: 15px; background-color: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.3); color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;">
+                    🚪 Logout
+                </button>
+            </div>
+       </div>
+    </section>
+    <section class="services py-5">
+        <h2>Why Shop with us?</h2>
+        <div class="cards">
+            <div>
+                <!-- Made images bigger by updating the image paths and sizes -->
+                <img src="../Assets/security1.webp" alt="A lock 🔒 or shield" class="service-image">
+                <h3>Secure Payments</h3>
+                <p>256-bit SSL encryption and secure payment processing</p>
+            </div>
+            <div>
+                <img src="../Assets/clock-and-truck.webp" alt="A truck 🚚, box, or stopwatch" class="service-image">
+                <h3>Fast & Reliable Delivery</h3>
+                <p>Quick turnaround and trusted couriers ensure your order arrives on time.</p>
+            </div>
+            <div>
+                <img src="../Assets/tech-support-call-center.webp" alt="A headset 🎧, chat bubble, or lifesaver" class="service-image">
+                <h3>Dedicated Support</h3>
+                <p>Get help when you need it with our friendly, 24/7 customer service team.</p>
+            </div>
+            <div>
+                <img src="../Assets/medal-quality.webp" alt="A check mark ✅, badge , or return arrow" class="service-image">
+                <h3>Quality Guaranteed</h3>
+                <p>Not satisfied? We offer a hassle-free 30-day return policy on all purchases.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+    <div class="link-container">
+        <div>
+            <h3></h3>
+            <p>Your one-stop shop for everything from cars to everyday essentials.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="Marketplace.html">Marketplace</a>
+            <a href="cart.html">Cart</a>
+            <a href="Login.html">Login</a>
+        </div>
+        <div>
+            <h3>Contact</h3>
+            <p>Email: support@universalmarket.com</p>
+            <p>Phone: (555) 123-4567</p>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <p>© 2025 Universal Marketplace. All rights reserved.</p>
+    </div>
+</footer>
+<script src="./js/main.js"></script>
+</body>
+</html>
